@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --dark-blue: rgb(13, 37, 63);
+  --light-blue: rgb(1, 180, 228);
+  --light-green: rgb(144, 206, 161);
+  --sky-1: #caebf2;
+  --sky-2: #eafdf8;
+  --eggplant: #49274a;
+  --shell: #faeee7;
+  --grape: #9461be;
+  --void: #0e0b16;
+  --fuschia: #a239ca;
+  --ink: #062f4f;
+  --blue-1: #58768c;
+  --blue-2: #6a637f;
+  --blue-3: #5f7387;
+  --gold: gold;
+
+  --white-1: rgb(255, 255, 255);
+  --white-2: rgb(220, 220, 220);
+  --black: rgb(0, 0, 0);
+  --dark-1: #222831;
+  --dark-2: #393e46;
+  --dark-3: #28282b;
+  --dark-4: #1a1a1d;
+
+  --white1-alpha: rgba(255, 255, 255, 0.9);
+  --white2-alpha: rgba(220, 220, 220, 0.9);
+
+  --dark1-alpha: rgba(34, 40, 49, 0.9);
+  --dark2-alpha: rgba(57, 62, 70, 0.9);
+
+  --transition: all 0.3s ease;
+}
+
+html {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  //font-family: 'Montserrat', sans-serif;
+  //font-family: 'Nunito Sans', sans-serif;
+  //font-family: 'Dosis', sans-serif;
+  font-family: 'Prompt', sans-serif;
+  min-height: 100vh;
+}
+
+.green {
+  background: green;
+}
+
+.orange {
+  background: orange;
+}
+
+.red {
+  background: red;
+}
+
+.lightBg1 {
+  background: var(--white-1);
+}
+
+.lightBg2 {
+  background: var(--white-2);
+}
+
+.lightAlpha1 {
+  background: var(--white1-alpha);
+}
+
+.lightAlpha2 {
+  background: var(--white2-alpha);
+}
+
+.darkBg1 {
+  background: var(--dark-2);
+}
+
+.darkBg2 {
+  background: var(--dark-1);
+}
+
+.darkAlpha1 {
+  background: var(--dark1-alpha);
+}
+
+.darkAlpha2 {
+  background: var(--dark2-alpha);
+}
+
+.lightColor1 {
+  color: var(--white-1);
+}
+
+.lightColor2 {
+  color: var(--white-2);
+}
+
+.darkColor1 {
+  color: var(--dark-1);
+}
+
+.darkColor2 {
+  color: var(--dark-2);
+}
+
+.lightBoxShadow {
+  box-shadow: 0px 1px 5px #000;
+}
+
+.darkBoxShadow {
+  box-shadow: 0px 1px 5px #000;
+}
+
+.lightBorderBottom {
+  border-bottom: 1px solid var(--white-1);
+}
+
+.darkBorderBottom {
+  border-bottom: 1px solid var(--dark-1);
+}
+
+// .loading {
+//   width: 5rem;
+//   min-height: 100vh;
+//   margin: 0 auto;
+//   border-radius: 100%;
+//   border: 5px solid tomato;
+//   border-top-color: var(--clr-primary-5);
+//   animation: spinner 0.6s linear infinite;
+// }
+
+@import '../Pages/Home/home';
+
+@import '../components/Header/header';
+@import '../components/Categories/categories';
+@import '../components/MovieList/movieList';
+@import '../components/MovieCard/movieCard';
+@import '../components/Filter/filter';
+@import '../components/SideMenu/sideMenu';

@@ -1,0 +1,77 @@
+.error,
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: tomato;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  min-height: 100vh;
+}
+
+.list {
+  padding-top: 7.35rem;
+  min-height: 100vh;
+  min-height: 100vh;
+
+  &__main {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    &__category {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 2rem 0 1rem 0rem;
+
+      p {
+        margin: 0;
+        text-transform: capitalize;
+        font-size: 1.2rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+        user-select: none;
+      }
+
+      .length {
+        margin-left: 1rem;
+        user-select: none;
+      }
+    }
+
+    &__movies {
+      margin: 0rem 0 5rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      &__not-found {
+        text-transform: capitalize;
+        color: tomato;
+        letter-spacing: 1px;
+        width: 1280px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .list {
+    padding-top: 2rem;
+
+    &__main {
+      &__category {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}

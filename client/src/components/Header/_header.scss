@@ -1,0 +1,146 @@
+.header {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background: var(--black);
+  color: var(--white-1);
+  letter-spacing: 1px;
+  padding: 0.8rem 0;
+
+  &__main {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    z-index: 1;
+
+    &__title {
+      h2 {
+        margin: 0;
+        padding: 0;
+        letter-spacing: inherit;
+        cursor: pointer;
+        font-weight: bolder;
+        font-weight: 500;
+      }
+
+      h2:hover {
+        transform: rotate(-3deg);
+        transition: var(--transition);
+      }
+    }
+
+    &__options {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .option {
+        text-decoration: none;
+        color: inherit;
+        text-transform: capitalize;
+        letter-spacing: inherit;
+        margin-left: 2rem;
+        font-size: 1rem;
+        font-weight: 400;
+        padding: 0;
+        user-select: none;
+
+        .icon {
+          margin-right: 0.5rem;
+        }
+      }
+
+      .bookmark {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+          position: relative;
+          display: inline-block;
+          height: 30px;
+          width: 30px;
+          border-radius: 50px;
+          background: tomato;
+          color: var(--white-1);
+          margin: 0;
+          margin-left: 0.5rem;
+          padding: 0;
+
+          span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 786px) {
+  .header {
+    top: unset;
+    bottom: 0;
+    padding: 0.5rem 0;
+
+    &__main {
+      justify-content: center;
+
+      &__options {
+        width: 100%;
+        justify-content: space-around;
+
+        .option {
+          margin-left: 0;
+          text-align: center;
+        }
+
+        .bookmark {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 640px) {
+  .header {
+    &__main {
+      padding: 0 1rem;
+      padding-right: 0;
+
+      &__title {
+        h2 {
+          margin-right: 2rem;
+          font-weight: 400;
+        }
+      }
+
+      &__options {
+        .option {
+          font-size: 0.85rem;
+
+          .icon {
+            margin-right: 0rem;
+            display: block;
+            margin-bottom: 0.2rem;
+          }
+
+          text-align: center;
+        }
+
+        .bookmark {
+          display: none;
+        }
+      }
+    }
+  }
+}
