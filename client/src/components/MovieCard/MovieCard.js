@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
 
 // Context
 import { useMovieContext } from '../../context/context'
+
+// Hooks
+import { addBookmark } from '../../hooks/useAddBookmark'
+import { deleteBookmark } from '../../hooks/useDeleteBookmark'
 
 const url =
   'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'
@@ -20,7 +24,23 @@ const getClassByRate = vote => {
 }
 
 const MovieCard = ({ title, id, image, date, vote }) => {
-  const { mode } = useMovieContext()
+  const { mode, bookmarks, user, getWishlist } = useMovieContext()
+
+  const [bookmark, setBookmark] = useState(false)
+
+  //console.log(wishlist)
+
+  useEffect(() => {
+    if (bookmarks) {
+      for (let i = 0; i < bookmarks.length; i++) {
+        if (bookmarks[i].movie_id === id) {
+          setBookmark(true)
+        }
+      }
+    }
+
+    if (bookmarks.length === 0) setBookmark(false)
+  }, [bookmarks])
 
   return (
     <div
@@ -68,9 +88,43 @@ const MovieCard = ({ title, id, image, date, vote }) => {
         </div>
       </Link>
 
-      <span className='movie-card__add'>
-        <i className='fa-solid fa-plus'></i>
-      </span>
+      {user && !bookmark && (
+        <span
+          className='movie-card__add'
+          onClick={() =>
+            addBookmark(
+              id,
+              title,
+              image,
+              date,
+              vote,
+              setBookmark,
+              getWishlist,
+              '/api/v1/wishlist'
+              //genre_ids
+            )
+          }
+        >
+          <i className='fa-solid fa-plus'></i>
+        </span>
+      )}
+
+      {user && bookmark && (
+        <span
+          className='movie-card__delete'
+          onClick={() =>
+            deleteBookmark(setBookmark, getWishlist, `/api/v1/wishlist/${id}`)
+          }
+        >
+          <i className='fa-solid fa-trash-can'></i>
+        </span>
+      )}
+
+      {!user && (
+        <span className='movie-card__add'>
+          <i className='fa-solid fa-plus'></i>
+        </span>
+      )}
     </div>
   )
 }

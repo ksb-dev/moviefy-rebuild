@@ -7,6 +7,8 @@ import { useMovieContext } from '../../context/context'
 import Header from '../../components/Header/Header'
 import Categories from '../../components/Categories/Categories'
 import MovieList from '../../components/MovieList/MovieList'
+import SmallHeader from '../../components/SmallHeader/SmallHeader'
+import Logout from '../../components/Logout/Logout'
 
 const Home = () => {
   const { mode, loadMovies } = useMovieContext()
@@ -22,7 +24,9 @@ const Home = () => {
   return (
     <div className={mode === 'light' ? 'home light' : 'home dark'}>
       <Header />
+      <SmallHeader />
       <Categories />
+      <Logout />
       <MovieList category={'popular'} />
     </div>
   )

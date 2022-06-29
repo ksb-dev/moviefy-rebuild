@@ -11,6 +11,12 @@ const SideMenu = ({ sideMenu }) => {
     sideMenu.current.style.transform = 'translateX(100%)'
   }
 
+  window.onresize = () => {
+    if (window.innerWidth > 1025) {
+      sideMenu.current.style.transform = 'translateX(100%)'
+    }
+  }
+
   return (
     <div
       ref={sideMenu}
@@ -25,7 +31,7 @@ const SideMenu = ({ sideMenu }) => {
             : 'side-menu__inner darkBg1'
         }
       >
-        <i class='fa-solid fa-xmark fa-2x' onClick={hideMenu}></i>
+        <i className='fa-solid fa-xmark fa-2x' onClick={hideMenu}></i>
         <Link
           to='/'
           className={

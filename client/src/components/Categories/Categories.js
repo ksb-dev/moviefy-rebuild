@@ -28,11 +28,13 @@ const Categories = () => {
 
   return (
     <>
+      {/* Sidemenu Component */}
+
       <SideMenu sideMenu={sideMenu} />
 
       <div
         className={
-          mode === 'light' ? 'categories lightBg1' : 'categories darkBg1'
+          mode === 'light' ? 'categories lightBg2' : 'categories darkBg2'
         }
       >
         <div className='categories__main'>
@@ -92,6 +94,8 @@ const Categories = () => {
           </div>
 
           <div className='categories__main__filter__mode'>
+            {/* Filter Compoenent */}
+
             <Filter />
 
             {mode === 'light' ? (

@@ -113,11 +113,11 @@ body {
 }
 
 .lightBoxShadow {
-  box-shadow: 0px 1px 5px #000;
+  box-shadow: 0px 1px 5px var(--white-1);
 }
 
 .darkBoxShadow {
-  box-shadow: 0px 1px 5px #000;
+  box-shadow: 0px 1px 5px var(--dark-2);
 }
 
 .lightBorderBottom {
@@ -139,6 +139,8 @@ body {
 // }
 
 @import '../Pages/Home/home';
+@import '../Pages/Login/login';
+@import '../Pages/SignUp/signUp';
 
 @import '../components/Header/header';
 @import '../components/Categories/categories';
@@ -146,3 +148,5 @@ body {
 @import '../components/MovieCard/movieCard';
 @import '../components/Filter/filter';
 @import '../components/SideMenu/sideMenu';
+@import '../components/SmallHeader/smallHeader';
+@import '../components/Logout/logout';

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
+import axios from 'axios'
 
 // 1. Create Context
 const MovieContext = React.createContext()
@@ -13,10 +14,36 @@ const TOP_RATED = `https://api.themoviedb.org/3/movie/top_rated?api_key=${proces
 const MovieProvider = ({ children }) => {
   const [movies, setMovies] = useState([])
   const [sortedMovies, setSortedMovies] = useState([])
+  const [bookmarks, setBookmarks] = useState([])
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const [category, setCategory] = useState('popular')
   const [mode, setMode] = useState('light')
+
+  const [user, setUser] = useState('')
+  const [token, setToken] = useState('')
+
+  // Get wishlist
+  const getWishlist = async () => {
+    const savedToken = localStorage.getItem('token')
+
+    try {
+      const response = await axios.get('/api/v1/wishlist', {
+        headers: {
+          Authorization: `Bearer ${savedToken}`
+        }
+      })
+      setBookmarks(response.data.wishlists)
+    } catch (error) {
+      //console.log(error.response.data.message)
+    }
+  }
+
+  useEffect(() => {
+    if (user) {
+      getWishlist()
+    }
+  }, [user])
 
   const loadMovies = async category => {
     window.scroll({
@@ -64,7 +91,9 @@ const MovieProvider = ({ children }) => {
       setMode(localStorage.getItem('mode'))
     }
 
-    //loadMovies()
+    // Get user
+    const userName = localStorage.getItem('name')
+    setUser(userName)
   }, [])
 
   // 3. Return values to children
@@ -83,7 +112,14 @@ const MovieProvider = ({ children }) => {
         category,
         setCategory,
         mode,
-        setMode
+        setMode,
+        user,
+        setUser,
+        token,
+        setToken,
+        bookmarks,
+        setBookmarks,
+        getWishlist
       }}
     >
       {children}

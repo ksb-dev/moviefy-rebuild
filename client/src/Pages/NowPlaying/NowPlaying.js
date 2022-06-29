@@ -7,6 +7,7 @@ import { useMovieContext } from '../../context/context'
 import Header from '../../components/Header/Header'
 import Categories from '../../components/Categories/Categories'
 import MovieList from '../../components/MovieList/MovieList'
+import SmallHeader from '../../components/SmallHeader/SmallHeader'
 
 const NowPlaying = () => {
   const { mode, loadMovies } = useMovieContext()
@@ -22,6 +23,7 @@ const NowPlaying = () => {
   return (
     <div className={mode === 'light' ? 'light' : 'dark'}>
       <Header />
+      <SmallHeader />
       <Categories />
       <MovieList category={'now playing'} />
     </div>

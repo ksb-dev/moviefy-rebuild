@@ -2,7 +2,7 @@
   width: 190px;
   margin: 1rem;
   position: relative;
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 0rem;
   padding-bottom: 0;
   box-shadow: 0 0 5px var(--black);
@@ -20,8 +20,8 @@
 
       &__image {
         width: 100%;
-        border-top-right-radius: 3px;
-        border-top-left-radius: 3px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
         user-select: none;
       }
 
@@ -73,7 +73,8 @@
     }
   }
 
-  &__add {
+  &__add,
+  &__delete {
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
@@ -103,14 +104,23 @@
   }
 
   &__add:hover {
-    transform: rotate(180deg);
+    transform: rotate(360deg);
+    transition: var(--transition);
+  }
+
+  &__delete {
+    background: red;
+  }
+
+  &__delete:hover {
+    transform: rotate(360deg);
     transition: var(--transition);
   }
 }
 
 @media screen and (max-width: 786px) {
   .movie-card {
-    width: 155px;
+    width: 160px;
     &__link {
       &__image-rating {
         height: 260px;
