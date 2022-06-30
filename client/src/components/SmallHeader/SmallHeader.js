@@ -1,6 +1,11 @@
 import React from 'react'
 
+// Context
+import { useMovieContext } from '../../context/context'
+
 const SmallHeader = () => {
+  const { bookmarks } = useMovieContext()
+
   return (
     <div className='small-header'>
       <p className='title'>Moviefy</p>
@@ -8,7 +13,7 @@ const SmallHeader = () => {
         <i className='fa-solid fa-bookmark icon'></i>bookmarks
         <p>
           {' '}
-          <span>10</span>
+          <span>{bookmarks.length}</span>
         </p>
       </div>
     </div>
