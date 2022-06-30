@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
+// Context
 import { useMovieContext } from '../context/context'
 
-export const useLogin = () => {
+export const useSignup = () => {
   const [isCancelled, setIsCancelled] = useState(false)
   const [error, setError] = useState(null)
   const [isPending, setIsPending] = useState(false)
@@ -13,13 +14,21 @@ export const useLogin = () => {
 
   const { setUser, setToken } = useMovieContext()
 
-  const login = async (email, password, setEmail, setPassword) => {
+  const signup = async (
+    name,
+    email,
+    password,
+    setEmail,
+    setPassword,
+    setName
+  ) => {
     setError(null)
     setIsPending(true)
 
     try {
       // Sign the user in
-      const response = await axios.post('/api/v1/auth/login', {
+      const response = await axios.post('/api/v1/auth/register', {
+        name,
         email,
         password
       })
@@ -29,10 +38,12 @@ export const useLogin = () => {
       } else {
         localStorage.setItem('name', response.data.user.name)
         localStorage.setItem('token', response.data.token)
+
         setUser(response.data.user.name)
         setToken(response.data.token)
         setEmail('')
         setPassword('')
+        setName('')
 
         navigate('/')
       }
@@ -43,7 +54,6 @@ export const useLogin = () => {
         setIsPending(false)
       }
     } catch (error) {
-      console.log(error)
       if (!isCancelled) {
         setError(error.response.data.message)
         setIsPending(false)
@@ -52,10 +62,8 @@ export const useLogin = () => {
   }
 
   useEffect(() => {
-    return () => {
-      setIsCancelled(false)
-    }
+    return () => setIsCancelled(false)
   }, [])
 
-  return { error, setError, isPending, login }
+  return { error, setError, isPending, signup }
 }

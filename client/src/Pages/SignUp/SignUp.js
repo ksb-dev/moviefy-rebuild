@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 // Hooks
-import { useLogin } from '../../hooks/useLogin'
+import { useSignup } from '../../hooks/useSignup'
 
 // Context
 import { useMovieContext } from '../../context/context'
@@ -15,11 +15,11 @@ const Signup = () => {
 
   const { mode } = useMovieContext()
 
-  const { error, setError, isPending, login } = useLogin()
+  const { error, setError, isPending, signup } = useSignup()
 
   const handleSubmit = e => {
     e.preventDefault()
-    login(name, email, password, setName, setEmail, setPassword)
+    signup(name, email, password, setEmail, setPassword, setName)
   }
 
   return (
@@ -53,7 +53,7 @@ const Signup = () => {
         <input
           className={mode === 'light' ? 'lightBg2' : 'darkBg2'}
           type='name'
-          onChange={e => setEmail(e.target.value)}
+          onChange={e => setName(e.target.value)}
           value={name}
         />
 

@@ -22,7 +22,7 @@ const Logout = ({ logoutRef }) => {
   useEffect(() => {
     const hodeLogout = e => {
       if (
-        logout.current.contains(e.target) &&
+        logoutRef.current.contains(e.target) &&
         !logoutInner.current.contains(e.target)
       ) {
         logoutRef.current.style.zIndex = '-1'
@@ -38,8 +38,8 @@ const Logout = ({ logoutRef }) => {
   }, [])
 
   const hideLogout = () => {
-    logout.current.style.zIndex = '-1'
-    logout.current.style.transform = 'scale(0)'
+    logoutRef.current.style.zIndex = '-1'
+    logoutRef.current.style.transform = 'scale(0)'
   }
 
   return (
