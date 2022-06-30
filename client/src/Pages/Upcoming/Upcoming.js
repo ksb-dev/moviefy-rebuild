@@ -10,15 +10,14 @@ import MovieList from '../../components/MovieList/MovieList'
 import SmallHeader from '../../components/SmallHeader/SmallHeader'
 
 const Upcoming = () => {
-  const { mode, loadMovies } = useMovieContext()
+  const { mode, loadMovies, user } = useMovieContext()
   const hasFetchedData = useRef(false)
 
   useEffect(() => {
-    if (!hasFetchedData.current) {
-      loadMovies('upcoming')
-      hasFetchedData.current = true
-    }
-  }, [loadMovies])
+    loadMovies('upcoming')
+
+    if (user) window.location.reload()
+  }, [])
 
   return (
     <div className={mode === 'light' ? 'light' : 'dark'}>

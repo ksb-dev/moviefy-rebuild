@@ -11,15 +11,14 @@ import SmallHeader from '../../components/SmallHeader/SmallHeader'
 import Logout from '../../components/Logout/Logout'
 
 const Home = () => {
-  const { mode, loadMovies } = useMovieContext()
-  const hasFetchedData = useRef(false)
+  const { mode, loadMovies, user } = useMovieContext()
+  //const hasFetchedData = useRef(false)
 
   useEffect(() => {
-    if (!hasFetchedData.current) {
-      loadMovies('popular')
-      hasFetchedData.current = true
-    }
-  }, [loadMovies])
+    loadMovies('popular')
+
+    if (user) window.location.reload()
+  }, [])
 
   return (
     <div className={mode === 'light' ? 'home light' : 'home dark'}>

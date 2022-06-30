@@ -33,7 +33,7 @@ const MovieCard = ({ title, id, image, date, vote }) => {
   useEffect(() => {
     if (bookmarks) {
       for (let i = 0; i < bookmarks.length; i++) {
-        if (bookmarks[i].movie_id === id) {
+        if (bookmarks[i].movie_id == id) {
           setBookmark(true)
         }
       }
