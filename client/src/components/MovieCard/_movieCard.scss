@@ -56,7 +56,7 @@
         padding: 0;
         letter-spacing: 1px;
         letter-spacing: 0.5px;
-        font-weight: 500;
+        font-weight: 400;
         font-size: 1rem;
         user-select: none;
       }
@@ -65,7 +65,7 @@
     &__date {
       letter-spacing: 1px;
       margin-top: 0;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       padding: 1rem;
       border-radius: 3px;
       font-weight: 400;
@@ -118,10 +118,10 @@
   }
 }
 
-.movie-card:hover {
-  box-shadow: 0 0 10px var(--black);
-  transition: var(--transition);
-}
+// .movie-card:hover {
+//   box-shadow: 0 0 10px var(--black);
+//   transition: var(--transition);
+// }
 
 @media screen and (max-width: 786px) {
   .movie-card {

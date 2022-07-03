@@ -27,7 +27,7 @@
   &__opened {
     position: absolute;
     right: 1.5rem;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     z-index: 2;
     display: flex;
     flex-wrap: wrap;
@@ -36,7 +36,7 @@
     width: 400px;
     border-radius: 3px;
     padding: 0.5rem;
-    box-shadow: 0 0 5px var(--black);
+    //box-shadow: 0 0 5px var(--black);
 
     span {
       padding: 0.2rem 0.5rem;
@@ -48,7 +48,7 @@
       letter-spacing: 1px;
       font-weight: 400;
       text-transform: capitalize;
-      box-shadow: 0 0 5px var(--black);
+      //box-shadow: 0 0 5px var(--black);
     }
 
     .first {
