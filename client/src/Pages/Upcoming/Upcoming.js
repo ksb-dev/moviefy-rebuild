@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 
 // Context
 import { useMovieContext } from '../../context/context'
@@ -11,12 +11,11 @@ import SmallHeader from '../../components/SmallHeader/SmallHeader'
 
 const Upcoming = () => {
   const { mode, loadMovies, user } = useMovieContext()
-  const hasFetchedData = useRef(false)
 
   useEffect(() => {
     loadMovies('upcoming')
 
-    if (user) window.location.reload()
+    //if (user) window.location.reload()
   }, [])
 
   return (
