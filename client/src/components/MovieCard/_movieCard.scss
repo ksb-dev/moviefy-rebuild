@@ -76,7 +76,7 @@
   &__add,
   &__delete {
     position: absolute;
-    top: 0.5rem;
+    bottom: 0.5rem;
     right: 0.5rem;
     font-size: 1.2rem;
     background: #4cbb17;
@@ -85,8 +85,8 @@
     font-weight: 500;
     letter-spacing: 1px;
     cursor: pointer;
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     border-radius: 50px;
     text-align: center;
 
@@ -128,8 +128,24 @@
     width: 160px;
     &__link {
       &__image-rating {
-        height: 260px;
+        height: 270px;
       }
+      &__title {
+        h5 {
+          font-size: 0.8rem;
+          line-height: 1.2rem;
+        }
+      }
+      &__date {
+        font-size: 0.7rem;
+        letter-spacing: 0px;
+      }
+    }
+
+    &__add,
+    &__delete {
+      bottom: 0.2rem;
+      right: 0.2rem;
     }
   }
 }
@@ -139,12 +155,12 @@
     margin: 1rem 0.7rem;
 
     &__link {
-      &__title {
-        h5 {
-          font-size: 0.9rem;
-          line-height: 1.2rem;
-        }
-      }
+      // &__title {
+      //   h5 {
+      //     font-size: 0.9rem;
+      //     line-height: 1.2rem;
+      //   }
+      // }
 
       &__date {
         font-size: 0.8rem;
