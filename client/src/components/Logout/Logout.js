@@ -4,7 +4,13 @@ import React, { useEffect, useRef } from 'react'
 import { useMovieContext } from '../../context/context'
 
 const Logout = ({ logoutRef }) => {
-  const { mode, setUser, setToken, loadMovies } = useMovieContext()
+  const {
+    mode,
+    setUser,
+    setToken,
+    loadMovies,
+    setBookmarks
+  } = useMovieContext()
   const logoutInner = useRef(null)
 
   const logout = () => {
@@ -14,28 +20,29 @@ const Logout = ({ logoutRef }) => {
     loadMovies('popular')
     setUser('')
     setToken('')
+    setBookmarks([])
 
     logoutRef.current.style.zIndex = '-1'
     logoutRef.current.style.transform = 'scale(0)'
   }
 
-  useEffect(() => {
-    const hodeLogout = e => {
-      if (
-        logoutRef.current.contains(e.target) &&
-        !logoutInner.current.contains(e.target)
-      ) {
-        logoutRef.current.style.zIndex = '-1'
-        logoutRef.current.style.transform = 'scale(0)'
-      }
-    }
+  // useEffect(() => {
+  //   const hodeLogout = e => {
+  //     if (
+  //       logoutRef.current.contains(e.target) &&
+  //       !logoutInner.current.contains(e.target)
+  //     ) {
+  //       logoutRef.current.style.zIndex = '-1'
+  //       logoutRef.current.style.transform = 'scale(0)'
+  //     }
+  //   }
 
-    document.body.addEventListener('click', hodeLogout)
+  //   document.body.addEventListener('click', hodeLogout)
 
-    return () => {
-      document.body.removeEventListener('click', hodeLogout)
-    }
-  }, [])
+  //   return () => {
+  //     document.body.removeEventListener('click', hodeLogout)
+  //   }
+  // }, [])
 
   const hideLogout = () => {
     logoutRef.current.style.zIndex = '-1'

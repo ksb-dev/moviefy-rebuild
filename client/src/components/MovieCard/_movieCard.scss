@@ -118,6 +118,11 @@
   }
 }
 
+.movie-card:hover {
+  box-shadow: 0 0 10px var(--black);
+  transition: var(--transition);
+}
+
 @media screen and (max-width: 786px) {
   .movie-card {
     width: 160px;

@@ -121,9 +121,9 @@ const MovieCard = ({ title, id, image, date, vote }) => {
       )}
 
       {!user && (
-        <span className='movie-card__add'>
+        <Link to='/login' className='movie-card__add'>
           <i className='fa-solid fa-plus'></i>
-        </span>
+        </Link>
       )}
     </div>
   )
