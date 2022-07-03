@@ -26,7 +26,7 @@
 
   &__opened {
     position: absolute;
-    right: -8rem;
+    right: 1.5rem;
     margin-top: 1rem;
     z-index: 2;
     display: flex;
@@ -34,9 +34,9 @@
     align-items: center;
     justify-content: center;
     width: 400px;
-    width: 90vw;
     border-radius: 3px;
     padding: 0.5rem;
+
     //box-shadow: 0 0 5px var(--black);
 
     span {
@@ -69,7 +69,7 @@
     }
     &__opened {
       right: unset;
-      left: 0;
+      left: 0rem;
     }
   }
 }
@@ -80,7 +80,7 @@
       padding: 0.3rem 0.6rem;
     }
     &__opened {
-      //width: 75vw;
+      width: 90vw;
       right: unset;
       padding: 0.5rem 0;
     }

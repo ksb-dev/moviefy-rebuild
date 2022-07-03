@@ -31,7 +31,14 @@ const SideMenu = ({ sideMenu }) => {
             : 'side-menu__inner darkBg1'
         }
       >
-        <i className='fa-solid fa-xmark fa-2x' onClick={hideMenu}></i>
+        <i
+          className={
+            mode === 'light'
+              ? 'fa-solid fa-xmark fa-2x darkColor1'
+              : 'fa-solid fa-xmark fa-2x lightColor1'
+          }
+          onClick={hideMenu}
+        ></i>
         <Link
           to='/'
           className={
