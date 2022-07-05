@@ -45,7 +45,7 @@ const MovieCard = ({ title, id, image, date, vote }) => {
   return (
     <div
       className={
-        mode === 'light' ? 'movie-card lightBg2' : 'movie-card darkBg2'
+        mode === 'light' ? 'movie-card lightBg1' : 'movie-card darkBg1'
       }
     >
       <Link className='movie-card__link' to={`/movie/${id}`}>
