@@ -34,7 +34,7 @@ const Categories = () => {
 
       <div
         className={
-          mode === 'light' ? 'categories lightBg1' : 'categories darkBg1'
+          mode === 'light' ? 'categories lightBg2' : 'categories darkBg2'
         }
       >
         <div className='categories__main'>

@@ -21,7 +21,7 @@ const SideMenu = ({ sideMenu }) => {
     <div
       ref={sideMenu}
       className={
-        mode === 'light' ? 'side-menu lightAlpha2' : 'side-menu darkAlpha1'
+        mode === 'light' ? 'side-menu lightAlpha1' : 'side-menu darkAlpha2'
       }
     >
       <div
