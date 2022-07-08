@@ -77,13 +77,13 @@ const MovieCard = ({ title, id, image, date, vote }) => {
               ? title.length >= 50
                 ? title.substring(0, 45) + '...'
                 : title
-              : 'No Title'}
+              : '----'}
           </h5>
         </div>
 
         <div className='movie-card__link__date'>
           <span className={mode === 'light' ? 'darkColor2' : 'lightColor2'}>
-            {moment(date).format('Do MMM, YYYY')}
+            {date ? moment(date).format('Do MMM, YYYY') : '----'}
           </span>
         </div>
       </Link>
