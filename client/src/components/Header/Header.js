@@ -10,6 +10,7 @@ import Logout from '../Logout/Logout'
 const Header = () => {
   const { mode, setMode, user, bookmarks } = useMovieContext()
   const logoutRef = useRef(null)
+  const headerRef = useRef(null)
 
   const handleMode = mode => {
     if (mode === 'light') {
@@ -31,6 +32,7 @@ const Header = () => {
       <Logout logoutRef={logoutRef} />
 
       <div
+        ref={headerRef}
         className={
           mode === 'light'
             ? 'header lightBg2 darkColor1'

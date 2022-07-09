@@ -12,6 +12,7 @@ const Categories = () => {
   const { mode, setMode } = useMovieContext()
   const categoryRef = useRef(null)
   const sideMenu = useRef(null)
+
   var prevScrollpos = window.pageYOffset
 
   window.onscroll = () => {
@@ -19,16 +20,16 @@ const Categories = () => {
   }
 
   const scrollFunction = () => {
-    var currentScrollpos = window.pageYOffset + 50
+    var currentScrollpos = window.pageYOffset
 
     if (prevScrollpos > currentScrollpos) {
       setTimeout(() => {
         categoryRef.current.style.top = '3.7rem'
-      }, 200)
+      }, 300)
     } else {
       setTimeout(() => {
         categoryRef.current.style.top = '-3.7rem'
-      }, 200)
+      }, 300)
     }
     prevScrollpos = currentScrollpos
   }
