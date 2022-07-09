@@ -12,20 +12,25 @@ const Categories = () => {
   const { mode, setMode } = useMovieContext()
   const categoryRef = useRef(null)
   const sideMenu = useRef(null)
+  var prevScrollpos = window.pageYOffset
 
   window.onscroll = () => {
     scrollFunction()
   }
 
   const scrollFunction = () => {
-    if (
-      document.body.scrollTop > 50 ||
-      document.documentElement.scrollTop > 50
-    ) {
-      categoryRef.current.style.boxShadow = '0 0 3px black'
+    var currentScrollpos = window.pageYOffset + 50
+
+    if (prevScrollpos > currentScrollpos) {
+      setTimeout(() => {
+        categoryRef.current.style.top = '3.7rem'
+      }, 200)
     } else {
-      categoryRef.current.style.boxShadow = 'unset'
+      setTimeout(() => {
+        categoryRef.current.style.top = '-3.7rem'
+      }, 200)
     }
+    prevScrollpos = currentScrollpos
   }
 
   const handleMode = mode => {
@@ -51,7 +56,7 @@ const Categories = () => {
       <div
         ref={categoryRef}
         className={
-          mode === 'light' ? 'categories lightBg1' : 'categories darkBg1'
+          mode === 'light' ? 'categories lightBg2' : 'categories darkBg2'
         }
       >
         <div className='categories__main'>

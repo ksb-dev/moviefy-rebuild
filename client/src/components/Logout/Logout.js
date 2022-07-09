@@ -54,8 +54,8 @@ const Logout = ({ logoutRef }) => {
       ref={logoutRef}
       className={
         mode === 'light'
-          ? 'logout lightAlpha2 darkColor1'
-          : 'logout darkAlpha1 lightColor1'
+          ? 'logout lightAlpha1 darkColor1'
+          : 'logout darkAlpha2 lightColor1'
       }
     >
       <div

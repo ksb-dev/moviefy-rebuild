@@ -154,8 +154,8 @@ const Filter = () => {
           ref={filterRef}
           className={
             mode === 'light'
-              ? 'categories__main__filter_mode__main__closed lightBg2 darkColor1'
-              : 'categories__main__filter_mode__main__closed darkBg2 lightColor1'
+              ? 'categories__main__filter_mode__main__closed lightBg1 darkColor1'
+              : 'categories__main__filter_mode__main__closed darkBg1 lightColor1'
           }
           onClick={e => toggleFilter(e)}
         >
