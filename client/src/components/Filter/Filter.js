@@ -154,8 +154,8 @@ const Filter = () => {
           ref={filterRef}
           className={
             mode === 'light'
-              ? 'categories__main__filter_mode__main__closed lightBg1 darkColor1'
-              : 'categories__main__filter_mode__main__closed darkBg1 lightColor1'
+              ? 'categories__main__filter_mode__main__closed lightBg2 darkColor1'
+              : 'categories__main__filter_mode__main__closed darkBg2 lightColor1'
           }
           onClick={e => toggleFilter(e)}
         >
@@ -178,16 +178,16 @@ const Filter = () => {
           <div
             className={
               mode === 'light'
-                ? 'categories__main__filter_mode__main__opened  lightBg2 darkColor1'
-                : 'categories__main__filter_mode__main__opened darkBg2 lightColor1'
+                ? 'categories__main__filter_mode__main__opened  lightBg1 darkColor1'
+                : 'categories__main__filter_mode__main__opened darkBg1 lightColor1'
             }
           >
             <span
               onClick={() => sortMovies(0)}
               className={
                 mode === 'light'
-                  ? 'first lightBg1 darkColor1'
-                  : 'first darkBg1 lightColor1'
+                  ? 'first lightBg2 darkColor1'
+                  : 'first darkBg2 lightColor1'
               }
             >
               All
@@ -195,7 +195,7 @@ const Filter = () => {
             <span
               onClick={() => sortMovies(1)}
               className={
-                mode === 'light' ? 'lightBg1 darkColor1' : 'darkBg1 lightColor1'
+                mode === 'light' ? 'lightBg2 darkColor1' : 'darkBg2 lightColor1'
               }
             >
               Rating Low
@@ -203,7 +203,7 @@ const Filter = () => {
             <span
               onClick={() => sortMovies(2)}
               className={
-                mode === 'light' ? 'lightBg1 darkColor1' : 'darkBg1 lightColor1'
+                mode === 'light' ? 'lightBg2 darkColor1' : 'darkBg2 lightColor1'
               }
             >
               Rating High
@@ -211,7 +211,7 @@ const Filter = () => {
             <span
               onClick={() => sortMovies(3)}
               className={
-                mode === 'light' ? 'lightBg1 darkColor1' : 'darkBg1 lightColor1'
+                mode === 'light' ? 'lightBg2 darkColor1' : 'darkBg2 lightColor1'
               }
             >
               Title (A-Z)
@@ -220,116 +220,116 @@ const Filter = () => {
               onClick={() => sortMovies(4)}
               className={
                 mode === 'light'
-                  ? 'last lightBg1 darkColor1'
-                  : 'last darkBg1 lightColor1'
+                  ? 'last lightBg2 darkColor1'
+                  : 'last darkBg2 lightColor1'
               }
             >
               Title (Z-A)
             </span>
             <span
-              className={mode === 'light' ? 'lightBg1' : 'darkBg1'}
+              className={mode === 'light' ? 'lightBg2' : 'darkBg2'}
               onClick={() => filterMovies(28, 'action')}
             >
               action
             </span>
             <span
-              className={mode === 'light' ? 'lightBg1' : 'darkBg1'}
+              className={mode === 'light' ? 'lightBg2' : 'darkBg2'}
               onClick={() => filterMovies(12, 'advanture')}
             >
               advanture
             </span>
             <span
-              className={mode === 'light' ? 'lightBg1' : 'darkBg1'}
+              className={mode === 'light' ? 'lightBg2' : 'darkBg2'}
               onClick={() => filterMovies(16, 'animation')}
             >
               animation
             </span>
             <span
-              className={mode === 'light' ? 'lightBg1' : 'darkBg1'}
+              className={mode === 'light' ? 'lightBg2' : 'darkBg2'}
               onClick={() => filterMovies(35, 'comedy')}
             >
               comedy
             </span>
             <span
-              className={mode === 'light' ? 'lightBg1' : 'darkBg1'}
+              className={mode === 'light' ? 'lightBg2' : 'darkBg2'}
               onClick={() => filterMovies(80, 'crime')}
             >
               crime
             </span>
             <span
-              className={mode === 'light' ? 'lightBg1' : 'darkBg1'}
+              className={mode === 'light' ? 'lightBg2' : 'darkBg2'}
               onClick={() => filterMovies(99, 'documentary')}
             >
               documentary
             </span>
             <span
-              className={mode === 'light' ? 'lightBg1' : 'darkBg1'}
+              className={mode === 'light' ? 'lightBg2' : 'darkBg2'}
               onClick={() => filterMovies(18, 'drama')}
             >
               drama
             </span>
             <span
-              className={mode === 'light' ? 'lightBg1' : 'darkBg1'}
+              className={mode === 'light' ? 'lightBg2' : 'darkBg2'}
               onClick={() => filterMovies(10751, 'family')}
             >
               family
             </span>
             <span
-              className={mode === 'light' ? 'lightBg1' : 'darkBg1'}
+              className={mode === 'light' ? 'lightBg2' : 'darkBg2'}
               onClick={() => filterMovies(14, 'fantasy')}
             >
               fantasy
             </span>
             <span
-              className={mode === 'light' ? 'lightBg1' : 'darkBg1'}
+              className={mode === 'light' ? 'lightBg2' : 'darkBg2'}
               onClick={() => filterMovies(36, 'history')}
             >
               history
             </span>
             <span
-              className={mode === 'light' ? 'lightBg1' : 'darkBg1'}
+              className={mode === 'light' ? 'lightBg2' : 'darkBg2'}
               onClick={() => filterMovies(27, 'horror')}
             >
               horror
             </span>
             <span
-              className={mode === 'light' ? 'lightBg1' : 'darkBg1'}
+              className={mode === 'light' ? 'lightBg2' : 'darkBg2'}
               onClick={() => filterMovies(10402, 'music')}
             >
               music
             </span>
             <span
-              className={mode === 'light' ? 'lightBg1' : 'darkBg1'}
+              className={mode === 'light' ? 'lightBg2' : 'darkBg2'}
               onClick={() => filterMovies(9648, 'mystery')}
             >
               mystery
             </span>
             <span
-              className={mode === 'light' ? 'lightBg1' : 'darkBg1'}
+              className={mode === 'light' ? 'lightBg2' : 'darkBg2'}
               onClick={() => filterMovies(10749, 'romance')}
             >
               romance
             </span>
             <span
-              className={mode === 'light' ? 'lightBg1' : 'darkBg1'}
+              className={mode === 'light' ? 'lightBg2' : 'darkBg2'}
               onClick={() => filterMovies(878, 'science fiction')}
             >
               science fiction
             </span>
             <span
-              className={mode === 'light' ? 'lightBg1' : 'darkBg1'}
+              className={mode === 'light' ? 'lightBg2' : 'darkBg2'}
               onClick={() => filterMovies(53, 'thriller')}
             >
               thriller
             </span>
             <span
-              className={mode === 'light' ? 'lightBg1' : 'darkBg1'}
+              className={mode === 'light' ? 'lightBg2' : 'darkBg2'}
               onClick={() => filterMovies(10752, 'war')}
             >
               war
             </span>
             <span
-              className={mode === 'light' ? 'lightBg1' : 'darkBg1'}
+              className={mode === 'light' ? 'lightBg2' : 'darkBg2'}
               onClick={() => filterMovies(37, 'western')}
             >
               western

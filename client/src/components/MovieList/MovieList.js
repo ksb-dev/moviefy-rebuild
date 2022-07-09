@@ -33,8 +33,8 @@ const MovieList = props => {
         <div
           className={
             mode === 'light'
-              ? 'list__main__category lightBg1'
-              : 'list__main__category darkBg1'
+              ? 'list__main__category lightBg2'
+              : 'list__main__category darkBg2'
           }
         >
           {/* category */}

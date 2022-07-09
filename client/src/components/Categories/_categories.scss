@@ -6,9 +6,9 @@
   right: 0;
   z-index: 1;
   margin: 0;
-  padding: 0.9rem 0;
+  padding: 0.85rem 0;
   //background: var(--light-blue);
-  //box-shadow: 0 0 3px var(--black);
+  //box-shadow: 0 0 2px var(--black);
 
   &__main {
     max-width: 1280px;
@@ -126,4 +126,12 @@
 
 .sunShadow {
   box-shadow: 0 0 20px var(--white-1);
+}
+
+.lightShadow {
+  box-shadow: 0 0 3px #fff;
+}
+
+.darkShadow {
+  box-shadow: 0 0 3px #000;
 }
