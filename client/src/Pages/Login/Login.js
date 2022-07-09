@@ -26,8 +26,8 @@ const Login = () => {
       onSubmit={handleSubmit}
       className={
         mode === 'light'
-          ? 'login lightBg1 darkColor1'
-          : 'login darkBg1 lightColor1'
+          ? 'login lightBg2 darkColor1'
+          : 'login darkBg2 lightColor1'
       }
     >
       <Link

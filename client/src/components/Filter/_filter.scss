@@ -15,9 +15,6 @@
     user-select: none;
     text-transform: capitalize;
     margin-right: 1.5rem;
-    //background: #fff;
-    //color: #000;
-    //box-shadow: 0 0 3px #000;
 
     div {
       i {
@@ -38,8 +35,6 @@
     width: 420px;
     border-radius: 5px;
     padding: 0.5rem;
-    //background: var(--light-blue);
-    //background: gold;
     box-shadow: 0 0 3px #000;
 
     span {
@@ -52,9 +47,6 @@
       letter-spacing: 1px;
       font-weight: 400;
       text-transform: capitalize;
-      //box-shadow: 0 0 3px #000;
-      //background: #fff;
-      //color: #000;
     }
 
     .first {
@@ -81,9 +73,6 @@
 
 @media screen and (max-width: 640px) {
   .categories__main__filter_mode__main {
-    &__closed {
-      padding: 0.3rem 0.6rem;
-    }
     &__opened {
       width: 90vw;
       right: unset;

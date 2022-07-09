@@ -7,8 +7,6 @@
   z-index: 1;
   margin: 0;
   padding: 0.85rem 0;
-  //background: var(--light-blue);
-  //box-shadow: 0 0 3px var(--black);
   transition: box-shadow 0.3s ease;
 
   &__main {
@@ -36,7 +34,6 @@
         text-decoration: none;
         border-radius: 50px;
         user-select: none;
-        //color: #fff;
       }
 
       .menu {
@@ -88,8 +85,6 @@
       }
 
       &__filter__mode {
-        //flex-direction: row-reverse;
-
         .menu {
           display: flex;
         }
