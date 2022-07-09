@@ -10,7 +10,23 @@ import SideMenu from '../SideMenu/SideMenu'
 
 const Categories = () => {
   const { mode, setMode } = useMovieContext()
+  const categoryRef = useRef(null)
   const sideMenu = useRef(null)
+
+  window.onscroll = () => {
+    scrollFunction()
+  }
+
+  const scrollFunction = () => {
+    if (
+      document.body.scrollTop > 50 ||
+      document.documentElement.scrollTop > 50
+    ) {
+      categoryRef.current.style.boxShadow = '0 0 3px black'
+    } else {
+      categoryRef.current.style.boxShadow = 'unset'
+    }
+  }
 
   const handleMode = mode => {
     if (mode === 'light') {
@@ -33,6 +49,7 @@ const Categories = () => {
       <SideMenu sideMenu={sideMenu} />
 
       <div
+        ref={categoryRef}
         className={
           mode === 'light' ? 'categories lightBg1' : 'categories darkBg1'
         }
