@@ -6,8 +6,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.4rem 0.6rem;
-    border-radius: 50px;
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
     font-size: 0.9rem;
     letter-spacing: 1px;
     font-weight: 400;
@@ -15,9 +15,9 @@
     user-select: none;
     text-transform: capitalize;
     margin-right: 1.5rem;
-    // background: gold;
-    // color: #000;
-    box-shadow: 0 0 3px #000;
+    //background: #fff;
+    //color: #000;
+    //box-shadow: 0 0 3px #000;
 
     div {
       i {
@@ -29,31 +29,32 @@
   &__opened {
     position: absolute;
     right: 1.5rem;
-    margin-top: 0.5rem;
+    margin-top: 1.2rem;
     z-index: 2;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    width: 420px;
-    border-radius: 3px;
+    width: 400px;
+    border-radius: 5px;
     padding: 0.5rem;
+    //background: var(--light-blue);
     //background: gold;
-    box-shadow: 0 0 5px #000;
+    //box-shadow: 0 0 5px #000;
 
     span {
-      padding: 0.3rem 0.7rem;
+      padding: 0.2rem 0.5rem;
       margin: 0.5rem 0.3rem;
       cursor: pointer;
-      border-radius: 50px;
+      border-radius: 5px;
       user-select: none;
       font-size: 0.9rem;
       letter-spacing: 1px;
       font-weight: 400;
       text-transform: capitalize;
-      box-shadow: 0 0 3px #000;
-      // background: gold;
-      // color: #000;
+      //box-shadow: 0 0 3px #000;
+      //background: #fff;
+      //color: #000;
     }
 
     .first {
@@ -89,4 +90,12 @@
       padding: 0.5rem 0;
     }
   }
+}
+
+.lightShadow {
+  //box-shadow: 0 0 3px #fff;
+}
+
+.darkShadow {
+  //box-shadow: 0 0 3px #000;
 }
