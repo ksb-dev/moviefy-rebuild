@@ -1,12 +1,12 @@
 .categories {
   position: fixed;
   width: 100vw;
-  top: 3.7rem;
+  top: 4.3rem;
   left: 0;
   right: 0;
   z-index: 1;
   margin: 0;
-  padding: 0.8rem 0;
+  padding: 1.1rem 0;
   transition: top 0.5s ease;
   //box-shadow: 0 0 3px #000;
 
@@ -16,7 +16,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 2rem;
+    padding: 0rem 2rem;
     transition: all 0.5s ease;
     opacity: 1;
 
@@ -98,7 +98,7 @@
 
 @media screen and (max-width: 786px) {
   .categories {
-    top: 3.6rem;
+    top: 4.3rem;
 
     &__main {
       &__filter__mode {

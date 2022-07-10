@@ -26,12 +26,12 @@ const Categories = () => {
 
     if (prevScrollpos > currentScrollpos) {
       setTimeout(() => {
-        categoryRef.current.style.top = '3.7rem'
+        categoryRef.current.style.top = '4.3rem'
       }, 300)
     } else {
       setFilterState(false)
       setTimeout(() => {
-        categoryRef.current.style.top = '-3.7rem'
+        categoryRef.current.style.top = '-4.3rem'
       }, 300)
     }
     prevScrollpos = currentScrollpos
