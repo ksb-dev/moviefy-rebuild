@@ -3,11 +3,10 @@ import React, { useState, useEffect, useRef } from 'react'
 // context
 import { useMovieContext } from '../../context/context'
 
-const Filter = () => {
+const Filter = ({ filterState, setFilterState }) => {
   const { mode, movies, setSortedMovies } = useMovieContext()
-  const [sortState, setSortState] = useState(false)
+
   const [filterValue, setFilterValue] = useState('All')
-  const [filterState, setFilterState] = useState(false)
 
   const filterRef = useRef(null)
 
@@ -25,7 +24,6 @@ const Filter = () => {
 
   const toggleFilter = e => {
     setFilterState(!filterState)
-    setSortState(!sortState)
   }
 
   const sortMovies = value => {

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 // Context
@@ -12,6 +12,8 @@ const Categories = () => {
   const { mode, setMode } = useMovieContext()
   const categoryRef = useRef(null)
   const sideMenu = useRef(null)
+
+  const [filterState, setFilterState] = useState(false)
 
   var prevScrollpos = window.pageYOffset
 
@@ -27,6 +29,7 @@ const Categories = () => {
         categoryRef.current.style.top = '3.7rem'
       }, 300)
     } else {
+      setFilterState(false)
       setTimeout(() => {
         categoryRef.current.style.top = '-3.7rem'
       }, 300)
@@ -119,7 +122,7 @@ const Categories = () => {
           <div className='categories__main__filter__mode'>
             {/* Filter Compoenent */}
 
-            <Filter />
+            <Filter filterState={filterState} setFilterState={setFilterState} />
 
             {mode === 'light' ? (
               <span
