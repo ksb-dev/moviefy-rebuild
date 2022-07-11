@@ -118,6 +118,27 @@
   }
 }
 
+.movie-card:hover {
+  transform: scale(1.02);
+  transition: var(--transition);
+}
+
+// .movie-card:hover {
+//   background-color: #3d2b1f;
+// }
+
+// .movie-card:hover
+//   .movie-card__link
+//   .movie-card__link__image-rating
+//   .movie-card__link__image-rating__rating {
+//   border: 5px solid #3d2b1f;
+// }
+
+// .movie-card:hover .movie-card__link .movie-card__link__title h5,
+// .movie-card:hover .movie-card__link .movie-card__link__date span {
+//   color: #fff;
+// }
+
 @media screen and (max-width: 786px) {
   .movie-card {
     width: 160px;

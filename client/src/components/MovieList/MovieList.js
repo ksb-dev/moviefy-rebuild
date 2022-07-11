@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 // Context
 import { useMovieContext } from '../../context/context'

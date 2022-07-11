@@ -25,17 +25,19 @@
       align-items: center;
       justify-content: center;
 
+      //box-shadow: 0 0 3px #000;
+      //border-radius: 50px;
+
       .option {
-        margin: 0;
+        margin: 0 1rem;
         padding: 0;
         text-transform: capitalize;
         letter-spacing: 1px;
-        margin-right: 2rem;
         font-weight: 400;
         font-size: 1rem;
         cursor: pointer;
         text-decoration: none;
-        border-radius: 50px;
+        //border-radius: 50px;
         user-select: none;
       }
 
@@ -119,18 +121,20 @@
   }
 }
 
-.moonShadow {
-  box-shadow: 0 0 20px var(--dark-2);
+.activeDarkCategory {
+  // background: var(--dark-2);
+  // color: #fff;
+
+  //box-shadow: 0 0 3px var(--dark-2);
+
+  border-bottom: 2px solid var(--dark-2);
 }
 
-.sunShadow {
-  box-shadow: 0 0 20px var(--white-1);
-}
+.activeLightCategory {
+  // background: var(--white-1);
+  // color: var(--dark-1);
 
-.lightShadow {
-  box-shadow: 0 0 3px #fff;
-}
+  //box-shadow: 0 0 3px var(--white-1);
 
-.darkShadow {
-  box-shadow: 0 0 3px #000;
+  border-bottom: 2px solid var(--white-1);
 }

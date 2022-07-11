@@ -71,50 +71,118 @@ const Categories = () => {
                 : 'categories__main__options lightColor1'
             }
           >
-            <Link
-              to='/'
-              className={
-                mode === 'light' ? 'option darkColor1' : 'option lightColor1'
-              }
-            >
-              popular
-            </Link>
+            {!window.location.pathname.includes('/trending') &&
+            !window.location.pathname.includes('/now') &&
+            !window.location.pathname.includes('/upcoming') &&
+            !window.location.pathname.includes('/top') ? (
+              <Link
+                to='/'
+                className={
+                  mode === 'light'
+                    ? 'option darkColor1 activeDarkCategory'
+                    : 'option lightColor1 activeLightCategory'
+                }
+              >
+                popular
+              </Link>
+            ) : (
+              <Link
+                to='/'
+                className={
+                  mode === 'light' ? 'option darkColor1' : 'option lightColor1'
+                }
+              >
+                popular
+              </Link>
+            )}
 
-            <Link
-              to='/trending'
-              className={
-                mode === 'light' ? 'option darkColor1' : 'option lightColor1'
-              }
-            >
-              trending
-            </Link>
+            {window.location.pathname.includes('/trending') ? (
+              <Link
+                to='/trending'
+                className={
+                  mode === 'light'
+                    ? 'option darkColor1 activeDarkCategory'
+                    : 'option lightColor1 activeLightCategory'
+                }
+              >
+                trending
+              </Link>
+            ) : (
+              <Link
+                to='/trending'
+                className={
+                  mode === 'light' ? 'option darkColor1' : 'option lightColor1'
+                }
+              >
+                trending
+              </Link>
+            )}
 
-            <Link
-              to='/now'
-              className={
-                mode === 'light' ? 'option darkColor1' : 'option lightColor1'
-              }
-            >
-              now playing
-            </Link>
+            {window.location.pathname.includes('/now') ? (
+              <Link
+                to='/now'
+                className={
+                  mode === 'light'
+                    ? 'option darkColor1 activeDarkCategory'
+                    : 'option lightColor1 activeLightCategory'
+                }
+              >
+                now playing
+              </Link>
+            ) : (
+              <Link
+                to='/now'
+                className={
+                  mode === 'light' ? 'option darkColor1' : 'option lightColor1'
+                }
+              >
+                now playing
+              </Link>
+            )}
 
-            <Link
-              to='/upcoming'
-              className={
-                mode === 'light' ? 'option darkColor1' : 'option lightColor1'
-              }
-            >
-              upcoming
-            </Link>
+            {window.location.pathname.includes('/upcoming') ? (
+              <Link
+                to='/upcoming'
+                className={
+                  mode === 'light'
+                    ? 'option darkColor1 activeDarkCategory'
+                    : 'option lightColor1 activeLightCategory'
+                }
+              >
+                upcoming
+              </Link>
+            ) : (
+              <Link
+                to='/upcoming'
+                className={
+                  mode === 'light' ? 'option darkColor1' : 'option lightColor1'
+                }
+              >
+                upcoming
+              </Link>
+            )}
 
-            <Link
-              to='/top'
-              className={
-                mode === 'light' ? 'option darkColor1' : 'option lightColor1'
-              }
-            >
-              top rated
-            </Link>
+            {window.location.pathname.includes('/top') ? (
+              <Link
+                to='/top'
+                className={
+                  mode === 'light'
+                    ? 'option darkColor1 activeDarkCategory'
+                    : 'option lightColor1 activeLightCategory'
+                }
+              >
+                top rated
+              </Link>
+            ) : (
+              <Link
+                to='/top'
+                className={
+                  mode === 'light' ? 'option darkColor1' : 'option lightColor1'
+                }
+              >
+                top rated
+              </Link>
+            )}
 
             <i className='fa-solid fa-bars menu' onClick={showMenu}></i>
           </div>
