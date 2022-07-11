@@ -109,6 +109,10 @@
       }
 
       &__filter__mode {
+        p {
+          display: none;
+        }
+
         .menu {
           display: flex;
         }

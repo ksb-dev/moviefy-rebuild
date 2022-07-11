@@ -21,18 +21,23 @@
     z-index: 1;
 
     &__title {
-      h2 {
-        margin: 0;
-        padding: 0;
-        letter-spacing: inherit;
-        cursor: pointer;
-        font-weight: bolder;
-        font-weight: 500;
-      }
+      a {
+        text-decoration: none;
+        color: var(--white-1);
 
-      h2:hover {
-        transform: rotate(-3deg);
-        transition: var(--transition);
+        h2 {
+          margin: 0;
+          padding: 0;
+          letter-spacing: inherit;
+          cursor: pointer;
+          font-weight: bolder;
+          font-weight: 500;
+        }
+
+        h2:hover {
+          transform: rotate(-3deg);
+          transition: var(--transition);
+        }
       }
     }
 

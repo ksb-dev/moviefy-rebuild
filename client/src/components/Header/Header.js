@@ -41,17 +41,32 @@ const Header = () => {
       >
         <div className='header__main'>
           <div className='header__main__title'>
-            <h2>Moviefy</h2>
+            <Link to='/'>
+              <h2>Moviefy</h2>
+            </Link>
           </div>
 
           <div className='header__main__options'>
-            <Link to='/' className='option'>
-              <i className='fa-solid fa-house icon'></i>home
-            </Link>
+            {!window.location.pathname.includes('/search') &&
+            !window.location.pathname.includes('/bookmarks') ? (
+              <Link to='/' className='option activeLightCategory'>
+                <i className='fa-solid fa-house icon'></i>home
+              </Link>
+            ) : (
+              <Link to='/' className='option'>
+                <i className='fa-solid fa-house icon'></i>home
+              </Link>
+            )}
 
-            <Link to='/search' className='option'>
-              <i className='fa-solid fa-magnifying-glass icon'></i>search
-            </Link>
+            {window.location.pathname.includes('/search') ? (
+              <Link to='/search' className='option activeLightCategory'>
+                <i className='fa-solid fa-magnifying-glass icon'></i>search
+              </Link>
+            ) : (
+              <Link to='/search' className='option'>
+                <i className='fa-solid fa-magnifying-glass icon'></i>search
+              </Link>
+            )}
 
             {user && (
               <Link to='#' className='option' onClick={() => showLogout()}>
@@ -67,13 +82,26 @@ const Header = () => {
               </Link>
             )}
 
-            <Link to='/bookmarks' className='option bookmark'>
-              <i className='fa-solid fa-bookmark icon'></i>bookmarks
-              <p>
-                {' '}
-                <span>{bookmarks.length}</span>
-              </p>
-            </Link>
+            {window.location.pathname.includes('/bookmarks') ? (
+              <Link
+                to='/bookmarks'
+                className='option bookmark activeLightCategory'
+              >
+                <i className='fa-solid fa-bookmark icon'></i>bookmarks
+                <p>
+                  {' '}
+                  <span>{bookmarks.length}</span>
+                </p>
+              </Link>
+            ) : (
+              <Link to='/bookmarks' className='option bookmark'>
+                <i className='fa-solid fa-bookmark icon'></i>bookmarks
+                <p>
+                  {' '}
+                  <span>{bookmarks.length}</span>
+                </p>
+              </Link>
+            )}
 
             <div className='mode'>
               {mode === 'light' ? (
