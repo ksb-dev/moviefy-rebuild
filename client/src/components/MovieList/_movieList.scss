@@ -65,6 +65,20 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .list {
+    &__main {
+      &__category {
+        display: flex;
+      }
+
+      &__movies {
+        margin: 0rem 0 5rem 0;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 786px) {
   .list {
     padding-top: 6.5rem;

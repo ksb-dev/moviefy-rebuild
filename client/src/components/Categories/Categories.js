@@ -9,7 +9,7 @@ import Filter from '../Filter/Filter'
 import SideMenu from '../SideMenu/SideMenu'
 
 const Categories = () => {
-  const { mode, setMode } = useMovieContext()
+  const { mode, setMode, sortedMovies } = useMovieContext()
   const categoryRef = useRef(null)
   const sideMenu = useRef(null)
 
@@ -83,7 +83,7 @@ const Categories = () => {
                     : 'option lightColor1 activeLightCategory'
                 }
               >
-                popular
+                popular{' '}
               </Link>
             ) : (
               <Link
@@ -127,7 +127,7 @@ const Categories = () => {
                     : 'option lightColor1 activeLightCategory'
                 }
               >
-                now playing
+                now playing <span>{sortedMovies.length}</span>
               </Link>
             ) : (
               <Link
@@ -149,7 +149,7 @@ const Categories = () => {
                     : 'option lightColor1 activeLightCategory'
                 }
               >
-                upcoming
+                upcoming <span>{sortedMovies.length}</span>
               </Link>
             ) : (
               <Link
@@ -171,7 +171,7 @@ const Categories = () => {
                     : 'option lightColor1 activeLightCategory'
                 }
               >
-                top rated
+                top rated <span>{sortedMovies.length}</span>
               </Link>
             ) : (
               <Link
@@ -189,6 +189,14 @@ const Categories = () => {
 
           <div className='categories__main__filter__mode'>
             {/* Filter Compoenent */}
+
+            <p
+              className={
+                mode === 'light' ? 'lightBg1 darkColor2' : 'darkBg1 lightColor1'
+              }
+            >
+              <span>{sortedMovies.length}</span>
+            </p>
 
             <Filter filterState={filterState} setFilterState={setFilterState} />
 

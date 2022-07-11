@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { useMovieContext } from '../../context/context'
 
 const Filter = ({ filterState, setFilterState }) => {
-  const { mode, movies, setSortedMovies } = useMovieContext()
+  const { mode, movies, sortedMovies, setSortedMovies } = useMovieContext()
 
   const [filterValue, setFilterValue] = useState('All')
 
@@ -157,7 +157,7 @@ const Filter = ({ filterState, setFilterState }) => {
           }
           onClick={e => toggleFilter(e)}
         >
-          <div>
+          <div className='icon-value'>
             <i className='fa-solid fa-filter'></i>
 
             <span>{filterValue}</span>
