@@ -9,6 +9,7 @@ import Upcoming from './Pages/Upcoming/Upcoming'
 import TopRated from './Pages/TopRated/TopRated'
 import Login from './Pages/Login/Login'
 import Signup from './Pages/SignUp/SignUp'
+import MovieDetail from './Pages/MovieDetail/MovieDetail'
 
 const App = () => {
   return (
@@ -28,6 +29,8 @@ const App = () => {
           <Route exact path='/login' element={<Login />} />
 
           <Route exact path='/signup' element={<Signup />} />
+
+          <Route exact path='/movie/:id' element={<MovieDetail />} />
         </Routes>
       </BrowserRouter>
     </>

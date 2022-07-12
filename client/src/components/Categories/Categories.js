@@ -26,12 +26,12 @@ const Categories = () => {
 
     if (prevScrollpos > currentScrollpos) {
       setTimeout(() => {
-        categoryRef.current.style.top = '4.3rem'
+        categoryRef.current.style.top = '4.2rem'
       }, 300)
     } else {
       setFilterState(false)
       setTimeout(() => {
-        categoryRef.current.style.top = '-4.3rem'
+        categoryRef.current.style.top = '-4.2rem'
       }, 300)
     }
     prevScrollpos = currentScrollpos
@@ -74,7 +74,8 @@ const Categories = () => {
             {!window.location.pathname.includes('/trending') &&
             !window.location.pathname.includes('/now') &&
             !window.location.pathname.includes('/upcoming') &&
-            !window.location.pathname.includes('/top') ? (
+            !window.location.pathname.includes('/top') &&
+            !window.location.pathname.includes('/movie') ? (
               <Link
                 to='/'
                 className={
@@ -96,7 +97,8 @@ const Categories = () => {
               </Link>
             )}
 
-            {window.location.pathname.includes('/trending') ? (
+            {!window.location.pathname.includes('/movie') &&
+            window.location.pathname.includes('/trending') ? (
               <Link
                 to='/trending'
                 className={
@@ -118,7 +120,8 @@ const Categories = () => {
               </Link>
             )}
 
-            {window.location.pathname.includes('/now') ? (
+            {!window.location.pathname.includes('/movie') &&
+            window.location.pathname.includes('/now') ? (
               <Link
                 to='/now'
                 className={
@@ -127,7 +130,7 @@ const Categories = () => {
                     : 'option lightColor1 activeLightCategory'
                 }
               >
-                now playing <span>{sortedMovies.length}</span>
+                now playing
               </Link>
             ) : (
               <Link
@@ -140,7 +143,8 @@ const Categories = () => {
               </Link>
             )}
 
-            {window.location.pathname.includes('/upcoming') ? (
+            {!window.location.pathname.includes('/movie') &&
+            window.location.pathname.includes('/upcoming') ? (
               <Link
                 to='/upcoming'
                 className={
@@ -149,7 +153,7 @@ const Categories = () => {
                     : 'option lightColor1 activeLightCategory'
                 }
               >
-                upcoming <span>{sortedMovies.length}</span>
+                upcoming
               </Link>
             ) : (
               <Link
@@ -162,7 +166,8 @@ const Categories = () => {
               </Link>
             )}
 
-            {window.location.pathname.includes('/top') ? (
+            {!window.location.pathname.includes('/movie') &&
+            window.location.pathname.includes('/top') ? (
               <Link
                 to='/top'
                 className={
@@ -171,7 +176,7 @@ const Categories = () => {
                     : 'option lightColor1 activeLightCategory'
                 }
               >
-                top rated <span>{sortedMovies.length}</span>
+                top rated
               </Link>
             ) : (
               <Link
@@ -188,17 +193,25 @@ const Categories = () => {
           </div>
 
           <div className='categories__main__filter__mode'>
-            {/* Filter Compoenent */}
+            {/* Filter Component and length*/}
 
-            <p
-              className={
-                mode === 'light' ? 'lightBg1 darkColor2' : 'darkBg1 lightColor1'
-              }
-            >
-              <span>{sortedMovies.length}</span>
-            </p>
-
-            <Filter filterState={filterState} setFilterState={setFilterState} />
+            {!window.location.pathname.includes('/movie') && (
+              <>
+                <p
+                  className={
+                    mode === 'light'
+                      ? 'lightBg1 darkColor2'
+                      : 'darkBg1 lightColor1'
+                  }
+                >
+                  <span>{sortedMovies.length}</span>
+                </p>
+                <Filter
+                  filterState={filterState}
+                  setFilterState={setFilterState}
+                />
+              </>
+            )}
 
             {mode === 'light' ? (
               <span

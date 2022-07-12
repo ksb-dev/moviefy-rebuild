@@ -1,12 +1,13 @@
 .categories {
   position: fixed;
   width: 100vw;
-  top: 4.3rem;
+  top: 4.2rem;
   left: 0;
   right: 0;
   z-index: 1;
   margin: 0;
-  padding: 1.1rem 0;
+  padding: 1rem 0;
+  height: 35px;
   transition: top 0.5s ease;
 
   &__main {
