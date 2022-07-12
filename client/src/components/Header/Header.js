@@ -50,7 +50,7 @@ const Header = () => {
             {!window.location.pathname.includes('/search') &&
             !window.location.pathname.includes('/bookmarks') &&
             !window.location.pathname.includes('/movie') ? (
-              <Link to='/' className='option activeLightCategory'>
+              <Link to='/' className='option active'>
                 <i className='fa-solid fa-house icon'></i>home
               </Link>
             ) : (
@@ -61,7 +61,7 @@ const Header = () => {
 
             {!window.location.pathname.includes('/movie') &&
             window.location.pathname.includes('/search') ? (
-              <Link to='/search' className='option activeLightCategory'>
+              <Link to='/search' className='option active'>
                 <i className='fa-solid fa-magnifying-glass icon'></i>search
               </Link>
             ) : (
@@ -86,10 +86,7 @@ const Header = () => {
 
             {!window.location.pathname.includes('/movie') &&
             window.location.pathname.includes('/bookmarks') ? (
-              <Link
-                to='/bookmarks'
-                className='option bookmark activeLightCategory'
-              >
+              <Link to='/bookmarks' className='option bookmark active'>
                 <i className='fa-solid fa-bookmark icon'></i>bookmarks
                 <p>
                   {' '}

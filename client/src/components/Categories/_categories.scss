@@ -17,7 +17,6 @@
     align-items: center;
     justify-content: space-between;
     padding: 0rem 2rem;
-    transition: all 0.5s ease;
     opacity: 1;
 
     &__options {
@@ -41,6 +40,11 @@
         align-items: center;
         justify-content: center;
       }
+
+      // .option:hover {
+      //   text-shadow: 0 0 5px orange;
+      //   transition: var(--transition);
+      // }
 
       .menu {
         display: none;
@@ -124,7 +128,7 @@
 
 @media screen and (max-width: 786px) {
   .categories {
-    top: 4.3rem;
+    //top: 4.3rem;
 
     &__main {
       &__filter__mode {
